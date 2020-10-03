@@ -109,8 +109,7 @@ develop branch로부터 새로운 release branch가 떼어져 나오는 중요�
 ---
 
 ### Hotfix branches
-
-![ex_screenshot](./picture.png)
+![ex_screenshot](./images/hotfixbranches.png)
 
 > Hotfix branch : master branch로부터 나와 develop나 master 브랜치로 병합된다.
 
