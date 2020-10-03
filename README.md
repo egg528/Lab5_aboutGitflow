@@ -51,6 +51,19 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
   각 개발자들은 origns에서 pulls와 push를 수행한다. 하지만 중앙 집중화된 push-pull 관계 이외에, 각 개발자들은 다른 동료들의 변경사항을 pull 하여 하위 팀을 형상할 수도 있다. 예를 들어, 이 방법은 작업 과정을 origin(중앙 저장소)에 pushing 하기 전에, 둘 이상의 개발자가 함께 커다란 새로운 기능을 개발하기에 유용할 것이다. 위의 그림에서는, Alice와 Bob, Alice와 David 그리고 Clair와 David가 하위 팀을 이룬다.
 
   엄밀히 말해, 이것은 Alice가 Bob의 저장소를 가리키며 git 저장소를 bob 이란 이름으로 정의한 것을 의미한다.
+---
+#Release branches
+
+Realease branches : develop branch로부터 나와 develop와 master branch로 병합된다.
+
+
+Release branches는 새로운 production 배포 준비를 지원한다. Realease branch들은 마지막 순간 점을 찍고 i's에서 t's로 넘어갈 수 있도록 돕는다. 더 나아가, 배포를 위해 작은 bug를 고치거나 meta-data를 준비하는데 사용되기도 한다. 이 모든 것을 release branch에서 수행함으로 debelop branch는 다음 세대 배포를 위한 변경 사항을 받을 수 있도록 깔끔하게 유지된다.
+
+
+develop branch로부터 새로운 release branch가 떼어져 나오는 중요한 순간은 develop branch가 새로운 배포를 위해 필요한 사항을 거의 다 반영한 시점이다. 적어도 배포에 목표한 모든 변경 사항은 deveop branch에 모두 반영된 순간이어야 한다. 미래 배포를 목표로 만들어진 모든 변경 사항이 그러한 건 아닐지라도 그들은 release branch가 떼어져 나갈 때까지 기다려야 한다.
+
+정확히 release branch의 시작점에서 다가오는 배포는 version number를 할당받는다. - 그 이전이 아니다. 개발 version number를 부여받는 순간까지, develop branch는 다음 배포를 위한 변화를 반영한다. 하지만 다음 배포가 0.3일지 1.0일지는 불명확하기 때문에 release branch가 시작될 때까지 변화를 반영한다. 배포에 대한 결정은 release branch가 시작될 때 내려지며 프로젝트의 규칙에 의해 수행된다.
+
 
 ---
 ### Hotfix branches
