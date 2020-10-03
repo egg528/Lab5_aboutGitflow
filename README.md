@@ -46,7 +46,7 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
   
 > DVSC - Distributed Version Control Systems의 약자로 Git은 대표적인 분산 버전 관리 시스템이다.  
-  
+[screenimg](https://github.com/egg528/SW_Dev_Team7/blob/master/images/2.png)  
 
   각 개발자들은 origns에서 pulls와 push를 수행한다. 하지만 중앙 집중화된 push-pull 관계 이외에, 각 개발자들은 다른 동료들의 변경사항을 pull 하여 하위 팀을 형상할 수도 있다. 예를 들어, 이 방법은 작업 과정을 origin(중앙 저장소)에 pushing 하기 전에, 둘 이상의 개발자가 함께 커다란 새로운 기능을 개발하기에 유용할 것이다. 위의 그림에서는, Alice와 Bob, Alice와 David 그리고 Clair와 David가 하위 팀을 이룬다.
 
