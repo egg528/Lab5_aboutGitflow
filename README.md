@@ -5,8 +5,8 @@
 ---
 
 ## 개요
-
-Vincent Driessen이 2010년 1월 5일 개발 모델에 대하여 적은 글은 수많은 개발자들이 자신의 프로젝트를 진행하는 데 영향을 끼쳤고, 아직까지도 가장 많이 이용되는 workflow중 하나이다.
+ 
+Vincent Driessen이 2010년 1월 5일 개발 모델에 대하여 적은 글은 수많은 개발자들이 자신의 프로젝트를 진행하는 데 영향을 끼쳤고, 아직까지도 가장 많이 이용되는 workflow중 하나이다. 
 
 2020년 5월 Vincent Driessen는 자신의 개발 모델에 대한 성찰에서 "모든 프로젝트에 적용되는 만병통치약은 없으니 자신의 프로젝트 맥락에 맞춰 사용해야 한다."라는 말을 남겼다.
 
@@ -18,10 +18,14 @@ Vincent Driessen이 2010년 1월 5일 개발 모델에 대하여 적은 글은 �
 
 ## Why Git?
 
+  
+  <img src= "images/1.gif" title = "gitflow"> </img>  
+
 중앙 집중형 관리 시스템 와 비교했을 때 Git이 가지는 장단점에 대한 치열한 논쟁은 웹을 통해 확인할 수 있다. 그곳에는 불꽃 튀는 전쟁이 계속해서 일어나고 있다. 개발자로서, 나는 오늘날 어떤 도구보다 Git을 선호한다. Git은 merging과 branching에 대해 개발자가 생각하는 방식을  
 완전히 바꾸었다. 내가 이전에 사용했던 고전적인 CVS/Subversion에서, merging과 branching은 항상 위험한 것으로 여겨졌고(merge 충돌이 일어나면, 팀원들은 당신을 물어뜯을 것이다!) 모든 것을 한 번에 진행해야 했었다.
 
 > CVS - Concurrent Versions System의 약자로 1980년대 만들어진 형상관리 프로그램이다. 파일 관리나 커밋 중 오류 시 롤백이 되지 않는 등 기술적인 문제가 많아 요즘은 사용되지 않는다.
+
 
 > Subversion - 문제가 있던 CVS를 대체하기 위해 탄생한 형상관리 도구이다. tag와 branchs라는 개념을 지원하여 형상(버전) 관리를 편하게 만들었다.
 
@@ -45,11 +49,16 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
 엄밀히 말해, 이것은 Alice가 Bob의 저장소를 가리키며 git 저장소를 bob 이란 이름으로 정의한 것을 의미한다.
 
-=======
+
+---
+
 
 ## The main branches
 
-# <img src= "images/main-branches.png" title = "main branch photo added"> </img>
+
+ <img src= "images/main-branches.png" title = "main branch photo added"> </img>
+
+<img src= "images/main-branches.png" title = "main branch photo added"> </img>
 
 > master
 
@@ -65,7 +74,7 @@ origin 저장소에 있는 master 브랜치는 모든 Git 사용자들에게 익
 
 develop branch가 안정적인 위치까지 도달하여 배포할 준비가 되었을 때, 모든 변화는 master 브랜치에 병합되어야 하고 배포 번호로 tag 되어야 한다. 어떻게 이 과정이 완성되는지 자세한 설명은 차후에 논의하겠다.
 
-그러므로, 변화가 master 브랜치로 병합되는 매 순간 정의에 의해 새로운 새로운 배포가 생산되는 것이다. 우리는 이 문제에 대해 매우 엄격하기 때문에 이론적으로는 master에 대한 commit이 있을 때마다 소프트웨어를 자동으로 구축하고 생산 서버에 롤아웃하기 위해 Git hook 스크립트를 사용할 수 있다.
+그러므로, 변화가 master치로 병합되는 매 순간 정의에 의해 새로운 새로운 배포가 생산되는 것이다. 우리는 이 문제에 대해 매우 엄격하기 때문에 이론적으로는 master에 대한 commit이 있을 때마다 소프트웨어를 자동으로 구축하고 생산 서버에 롤아웃하기 위해 Git hook 스크립트를 사용할 수 있다.
 
 ---
 
@@ -76,6 +85,14 @@ main branch인 master과 develop 다음으로, 우리의 개발 모델은 팀원
 각각의 branch들은 구체적인 목적을 가지고 어떤 branch는 기원이 되는 branch 여야 하고 또 다른 branch는 그들의 병합 대상이 되어야 하는 등의 엄격한 규칙이 정해져 있다. 우리는 아래에서 이점에 대해서 알아볼 것이다.
 
 이 branch들은 기술적으로 특별한 것은 아니다. branch의 종류는 우리가 branch를 어떻게 사용하는지를 기준으로 나뉜다. 그것들은 물론 기본적이고 오래된 Git의 branch 들이다.
+
+---
+
+### Feature branches
+
+> Feature branches : develop branch로부터 생겨나 develop branch로 병합된다.
+
+  Feature branch(때때로 Topic branches라고도 불린다)는 다가올 새로운 배포를 위한 새로운 변경 사항을 개발하는데 사용된다. 새로운 변경 사항 개발을 시작할 때, 현재 개발 사항이 포함될 배포 버전은 현시점에서 알기 힘들다. feature branch의 핵심은 이 branch가 변경 사항이 개발될 때까지 존재하지만 결국은 develop branch로 병합되거나(성공하여 다음 배포 버전에 반영될 경우) 버려질 것이다(실패한 개발일 경우). 전형적으로 Feature branch들은 origin(중앙 저장소) 저장소에는 없고 개발자 저장소에 있다.
 
 ---
 
