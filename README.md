@@ -54,3 +54,35 @@ main branch인 master과 develop 다음으로, 우리의 개발 모델은 팀원
 이 branch들은 기술적으로 특별한 것은 아니다. branch의 종류는 우리가 branch를 어떻게 사용하는지를 기준으로 나뉜다. 그것들은 물론 기본적이고 오래된 Git의 branch 들이다.
 
 ---
+
+### The main branches
+ 
+> master
+> develop
+
+핵심적으로, 개발 모델은 기존에 있던 모델에서 영감을 받았다. 중앙 저장소는 제거되지 않는 두 개의 main branch(master와 develop)를 가지고 있다.
+
+origin 저장소에 있는 master 브랜치는 모든 Git 사용자들에게 익숙할 것이다. master 브랜치와 평행하는 또 다른 브랜치는 develop이라 부른다.
+
+우리는 origin/master를 HEAD의 소스코드가 항상 생산 준비 상태로 반영된 main branch로 여긴다.
+
+우리는 origin/develop를 HEAD 소스코드가 항상 다음 배포를 위한 최신 개발 변화를 전달 준비가 된 main branch로 간주한다. 몇몇은 develop 브랜치를 '통합 branch'라 부르기도 한다. 이곳은 모든 automatic nightly builds가 건설되는 곳이다.
+
+develop branch가 안정적인 위치까지 도달하여 배포할 준비가 되었을 때, 모든 변화는 master 브랜치에 병합되어야 하고 배포 번호로 tag 되어야 한다. 어떻게 이 과정이 완성되는지 자세한 설명은 차후에 논의하겠다.
+
+그러므로, 변화가 master 브랜치로 병합되는 매 순간 정의에 의해 새로운 새로운 배포가 생산되는 것이다. 우리는 이 문제에 대해 매우 엄격하기 때문에 이론적으로는 master에 대한 commit이 있을 때마다 소프트웨어를 자동으로 구축하고 생산 서버에 롤아웃하기 위해 Git hook 스크립트를 사용할 수 있다.
+
+---
+
+### Hotfix branches
+![ex_screenshot](./picture.png)
+> Hotfix branch : master branch로부터 나와 develop나 master 브랜치로 병합된다.
+
+  Hotfix branches들은 비록 계획되지는 않았지만 새로운 배포를 준비한다는 점에서 release branch와 매우 흡사하다. Hotfix branch는 배포되어 있는 버전의 불만족스러운 상태를 즉각적으로 보완하기 위해 만들어졌다. 생산 버전에 있는 치명적인 bug를 즉시 해결해야 할 때, hotfix branch는 생산 버전을 표기하는 master branch와 일치하는 tag에서 떨어져 나온다. 중요한 건 hotfix의 보완 작업이 진행되는 동안 팀원들의 개발(develop branch)이 지속될 수 있다는 것이다.
+
+---
+
+### Summary
+  이 branching 모델에서 충격적인 것은 없지만, 이 게시물의 시작에 있는 "big picture"그림은 우리의 프로젝트에서 매우 유용하다는 것을 알게 되었다. 이것은 이해하기 쉽고 팀원들이 branching과 releasing 과정을 공유할 수 있도록 만드는 우아한 정신이 깃든 모델이다.
+
+---
