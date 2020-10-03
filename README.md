@@ -18,7 +18,7 @@ Vincent Driessen이 2010년 1월 5일 개발 모델에 대하여 적은 글은 �
 
 ### Why Git?
   
-  <img src= "images/1.png" title = "gitflow"> </img>  
+  <img src= "images/1.gif" title = "gitflow"> </img>  
 
 중앙 집중형 관리 시스템 와 비교했을 때 Git이 가지는 장단점에 대한 치열한 논쟁은 웹을 통해 확인할 수 있다. 그곳에는 불꽃 튀는 전쟁이 계속해서 일어나고 있다. 개발자로서, 나는 오늘날 어떤 도구보다 Git을 선호한다. Git은 merging과 branching에 대해 개발자가 생각하는 방식을  
 완전히 바꾸었다. 내가 이전에 사용했던 고전적인 CVS/Subversion에서, merging과 branching은 항상 위험한 것으로 여겨졌고(merge 충돌이 일어나면, 팀원들은 당신을 물어뜯을 것이다!) 모든 것을 한 번에 진행해야 했었다.
