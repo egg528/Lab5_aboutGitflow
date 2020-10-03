@@ -9,10 +9,10 @@
 Vincent Driessen이 2010년 1월 5일 개발 모델에 대하여 적은 글은 수많은 개발자들이  
 자신의 프로젝트를 진행하는 데 영향을 끼쳤고, 아직까지도 가장 많이 이용되는  
 workflow중 하나이다.  
-  
+
 2020년 5월 Vincent Driessen는 자신의 개발 모델에 대한 성찰에서 "모든 프로젝트에  
 적용되는 만병통치약은 없으니 자신의 프로젝트 맥락에 맞춰 사용해야 한다."라는 말을 남겼다.  
-  
+
 이처럼 10년이 지난 오늘날에도 사랑받고 있는 workflow이기에 원문을 번역하며  
 개발 모델을 학습해보기로 했다. 원문은 Git의 장점과 함께 자신의 개발 모델을  
 branch를 중심으로 설명한다. branch는 Main branch(master, develop)와  
@@ -34,14 +34,14 @@ branch의 목적과 사용 방법을 설명하는 방식으로 글이 전개된�
 완전히 바꾸었다. 내가 이전에 사용했던 고전적인 CVS/Subversion에서, merging과 branching은  
 항상 위험한 것으로 여겨졌고(merge 충돌이 일어나면, 팀원들은 당신을 물어뜯을 것이다!)  
 모든 것을 한 번에 진행해야 했었다.  
-  
-  
+
+
 > CVS - Concurrent Versions System의 약자로 1980년대 만들어진 형상관리 프로그램이다. 파일 관리나 커밋 중 오류 시 롤백이 되지 않는 등 기술적인 문제가 많아 요즘은 사용되지 않는다.  
-  
-  
+
+
 > Subversion - 문제가 있던 CVS를 대체하기 위해 탄생한 형상관리 도구이다. tag와 branchs라는 개념을 지원하여 형상(버전) 관리를 편하게 만들었다.
 
-  
+
 
 
 하지만 Git에서는, 이러한 작업들이 굉장히 쉽게 이루어지고 일별 workflow에서 핵심적인 요소 중 하나이다. 예를 들어, CVS/Subversion 교본에서는 branching과 merging은 전문가를 위한 마지막 챕터에서 다루는 주제이지만 Git 교본에서는 3번째 챕터에서 다루는 기본적인 주제이다.
@@ -55,3 +55,10 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 ---
 
 
+### Feature branches
+
+> Feature branches : develop branch로부터 생겨나 develop branch로 병합된다.
+
+  Feature branch(때때로 Topic branches라고도 불린다)는 다가올 새로운 배포를 위한 새로운 변경 사항을 개발하는데 사용된다. 새로운 변경 사항 개발을 시작할 때, 현재 개발 사항이 포함될 배포 버전은 현시점에서 알기 힘들다. feature branch의 핵심은 이 branch가 변경 사항이 개발될 때까지 존재하지만 결국은 develop branch로 병합되거나(성공하여 다음 배포 버전에 반영될 경우) 버려질 것이다(실패한 개발일 경우). 전형적으로 Feature branch들은 origin(중앙 저장소) 저장소에는 없고 개발자 저장소에 있다.
+
+ ---
