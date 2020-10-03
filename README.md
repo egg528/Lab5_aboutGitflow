@@ -1,1 +1,1 @@
-# SW개발실무 Team Activity - Git workflow
+# Lab5 Team Activity - Git workflow
