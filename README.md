@@ -45,7 +45,7 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
 ---
 
-### Supporting branches
+## Supporting branches
 
 main branch인 master과 develop 다음으로, 우리의 개발 모델은 팀원들 간의 평행적인 개발을 돕고, 변경 사항 추적을 쉽게 하고, 생산 배포를 준비하고 문제점들을 빠르게 수정할 수 있도록 보조하기 위한 다양한 지원 branch를 사용한다. main branch와 달리, supporting branch는 항상 사용 기한이 유한하고 결국에는 제거될 것이다.
 
