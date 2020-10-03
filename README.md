@@ -52,7 +52,7 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
   엄밀히 말해, 이것은 Alice가 Bob의 저장소를 가리키며 git 저장소를 bob 이란 이름으로 정의한 것을 의미한다.
 
-
+---
 ### Hotfix branches
 > Hotfix branch : master branch로부터 나와 develop나 master 브랜치로 병합된다.
 
