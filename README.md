@@ -54,4 +54,12 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
 ---
 
+### Hotfix branches
+> Hotfix branch : master branch로부터 나와 develop나 master 브랜치로 병합된다.
 
+  Hotfix branches들은 비록 계획되지는 않았지만 새로운 배포를 준비한다는 점에서 release branch와 매우 흡사하다. Hotfix branch는 배포되어 있는 버전의 불만족스러운 상태를 즉각적으로 보완하기 위해 만들어졌다. 생산 버전에 있는 치명적인 bug를 즉시 해결해야 할 때, hotfix branch는 생산 버전을 표기하는 master branch와 일치하는 tag에서 떨어져 나온다. 중요한 건 hotfix의 보완 작업이 진행되는 동안 팀원들의 개발(develop branch)이 지속될 수 있다는 것이다.
+
+### Summary
+  이 branching 모델에서 충격적인 것은 없지만, 이 게시물의 시작에 있는 "big picture"그림은 우리의 프로젝트에서 매우 유용하다는 것을 알게 되었다. 이것은 이해하기 쉽고 팀원들이 branching과 releasing 과정을 공유할 수 있도록 만드는 우아한 정신이 깃든 모델이다.
+
+---
