@@ -1,7 +1,8 @@
 # Lab5 Team Activity - Git workflow
 
 팀원 권우석, 박지윤, 우태희, 오승기, 빈현우, 정재준  
-
+---
+###개요
 Vincent Driessen이 2010년 1월 5일 개발 모델에 대하여 적은 글은 수많은 개발자들이  
 자신의 프로젝트를 진행하는 데 영향을 끼쳤고, 아직까지도 가장 많이 이용되는  
 workflow중 하나이다.  
@@ -14,4 +15,4 @@ workflow중 하나이다.
 branch를 중심으로 설명한다. branch는 Main branch(master, develop)와  
 Supporting branch(Feature, Release, Hotfix)로 나뉘어 총 5개이고 각  
 branch의 목적과 사용 방법을 설명하는 방식으로 글이 전개된다.
-
+---
