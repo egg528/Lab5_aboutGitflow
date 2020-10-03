@@ -37,9 +37,9 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
 우리가 사용하는 저장소 설정은 소개할 분기 모델과 잘 작동하며 중앙에 "진실" 저장소를 가지고 있다. 이 저장소는 오직 중앙 저장소로만 여겨진다는 점을 유의해라.(Git은 DVCS이기 때문에 기술적 수준에서 중앙 저장소는 없다.) 우리는 이 저장소 이름이 모든 깃 사용자에게 익숙해질 때까지 origin이라 부를 것이다.
 
-> DVSC - Distributed Version Control Systems의 약자로 Git은 대표적인 분산 버전 관리 시스템이다.  
+> DVSC - Distributed Version Control Systems의 약자로 Git은 대표적인 분산 버전 관리 시스템이다.
 
-[screenimg](https://github.com/egg528/SW_Dev_Team7/blob/master/images/2.png)  
+[screenimg](https://github.com/egg528/SW_Dev_Team7/blob/master/images/2.png)
 
 각 개발자들은 origns에서 pulls와 push를 수행한다. 하지만 중앙 집중화된 push-pull 관계 이외에, 각 개발자들은 다른 동료들의 변경사항을 pull 하여 하위 팀을 형상할 수도 있다. 예를 들어, 이 방법은 작업 과정을 origin(중앙 저장소)에 pushing 하기 전에, 둘 이상의 개발자가 함께 커다란 새로운 기능을 개발하기에 유용할 것이다. 위의 그림에서는, Alice와 Bob, Alice와 David 그리고 Clair와 David가 하위 팀을 이룬다.
 
@@ -54,8 +54,6 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 > master
 
 > develop
-
-
 
 핵심적으로, 개발 모델은 기존에 있던 모델에서 영감을 받았다. 중앙 저장소는 제거되지 않는 두 개의 main branch(master와 develop)를 가지고 있다.
 
@@ -85,7 +83,7 @@ main branch인 master과 develop 다음으로, 우리의 개발 모델은 팀원
 
 > Realease branches : develop branch로부터 나와 develop와 master branch로 병합된다.
 
-Release branches는 새로운 production 배포 준비를 지원한다. Realease branch들은 마지막 순간 점을 찍고 i's에서 t's로 넘어갈 수 있도록 돕는다. 더 나아가, 배포를 위해 작은 bug를 고치거나 meta-data를 준비하는데 사용되기도 한다. 이 모든 것을 release branch에서 수행함으로 debelop branch는 다음 세대 배포를 위한 변경 사항을 받을 수 있도록 깔끔하게 유지된다.
+Release branches는 새로운 production 배포 준비를 지원한다. Realease branch들은 마지막 순간 점을 찍고 i's에서 t's로 넘어갈 수 있도록 돕는다. 더 나아가, 배포를 위해 작은 bug를 고치거나 meta-data를 준비하는데 사용되기도 한다. 이 모든것을 release branch에서 수행함으로 debelop branch는 다음 세대 배포를 위한 변경 사항을 받을 수 있도록 깔끔하게 유지된다.
 
 develop branch로부터 새로운 release branch가 떼어져 나오는 중요한 순간은 develop branch가 새로운 배포를 위해 필요한 사항을 거의 다 반영한 시점이다. 적어도 배포에 목표한 모든 변경 사항은 deveop branch에 모두 반영된 순간이어야 한다. 미래 배포를 목표로 만들어진 모든 변경 사항이 그러한 건 아닐지라도 그들은 release branch가 떼어져 나갈 때까지 기다려야 한다.
 
