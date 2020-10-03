@@ -54,4 +54,22 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
 ---
 
+### The main branches
+
+ 
+> master
+> develop
+
+핵심적으로, 개발 모델은 기존에 있던 모델에서 영감을 받았다. 중앙 저장소는 제거되지 않는 두 개의 main branch(master와 develop)를 가지고 있다.
+
+origin 저장소에 있는 master 브랜치는 모든 Git 사용자들에게 익숙할 것이다. master 브랜치와 평행하는 또 다른 브랜치는 develop이라 부른다.
+
+우리는 origin/master를 HEAD의 소스코드가 항상 생산 준비 상태로 반영된 main branch로 여긴다.
+
+우리는 origin/develop를 HEAD 소스코드가 항상 다음 배포를 위한 최신 개발 변화를 전달 준비가 된 main branch로 간주한다. 몇몇은 develop 브랜치를 '통합 branch'라 부르기도 한다. 이곳은 모든 automatic nightly builds가 건설되는 곳이다.
+
+develop branch가 안정적인 위치까지 도달하여 배포할 준비가 되었을 때, 모든 변화는 master 브랜치에 병합되어야 하고 배포 번호로 tag 되어야 한다. 어떻게 이 과정이 완성되는지 자세한 설명은 차후에 논의하겠다.
+
+그러므로, 변화가 master 브랜치로 병합되는 매 순간 정의에 의해 새로운 새로운 배포가 생산되는 것이다. 우리는 이 문제에 대해 매우 엄격하기 때문에 이론적으로는 master에 대한 commit이 있을 때마다 소프트웨어를 자동으로 구축하고 생산 서버에 롤아웃하기 위해 Git hook 스크립트를 사용할 수 있다.
+
 
