@@ -56,7 +56,7 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 
 ### The main branches
 
-<img src= "SW_Dev_Team7/images/main-branches.png" title = "main branch photo added"> </img>
+<img src= "images/main-branches.png" title = "main branch photo added"> </img>
 > master
 
 > develop
