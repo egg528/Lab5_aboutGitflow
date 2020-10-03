@@ -47,8 +47,12 @@ Git의 단순함과 반복적인 특성의 결과로 branching과 merging은 더
 ---
 
 ### The main branches
- 
+
+<img src= "images/main-branches.png" title = "main branch photo added"> </img>
+=======
+
 > master
+
 > develop
 
 핵심적으로, 개발 모델은 기존에 있던 모델에서 영감을 받았다. 중앙 저장소는 제거되지 않는 두 개의 main branch(master와 develop)를 가지고 있다.
