@@ -1,4 +1,4 @@
-# Lab5 Team Activity - Git workflow
+# Git workflow
 
 팀원 권우석, 박지윤, 우태희, 오승기, 빈현우, 정재준
 
